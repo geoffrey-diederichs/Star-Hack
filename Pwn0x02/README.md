@@ -260,7 +260,7 @@ $cs: 0x33 $ss: 0x2b $ds: 0x00 $es: 0x00 $fs: 0x00 $gs: 0x00
 
 Cette fois nous écrivons sur le byte suivant, à l'adresse `0x00007fffffffdc41`. En relisant le code, et en continuant de tester le programme, on comprends que celui-ci nous permet d'écrire byte par byte par dessus la mémoire à partir de l'adresse `0x00007fffffffdc40`. Pour utiliser cette vulnérabilité il nous faut une adresse dans la stack après `0x00007fffffffdc40`, qui une fois modifié nous permettra de rediriger le programme.
 
-Un peu plus haut nous avons cette adresse dans la stack qui pourrait être intéressante :
+Un peu plus haut nous avons vu cette adresse dans la stack qui pourrait être intéressante :
 
 ```gdb
 0x00007fffffffdc48│+0x0078: 0x00007ffff7de1088  →  <__libc_start_call_main+0078> mov edi, eax
