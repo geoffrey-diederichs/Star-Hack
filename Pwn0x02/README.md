@@ -335,7 +335,7 @@ Il faut donc injecter les valeurs décimales des bytes voulues comme par exemple
 15
 ```
 
-[Ce script](./exploit.py) nous permet donc de mettre en forme :
+[Ce script](./exploit.py) nous permet de mettre tout cela en forme :
 
 ```console
 $ python3 exploit.py 
