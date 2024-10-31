@@ -42,7 +42,7 @@ Le programme nous demande de multiples entrées, essayons de voir si l'une d'ent
 
 ## Analyse statique
 
-Je ne vais pas montrer tout le code source, mais uniquement ces deux fonctions :
+En explorant le code source Ghidra nous pouvons trouver ces deux fonctions :
 
 ```C
 void mailshell(void)
