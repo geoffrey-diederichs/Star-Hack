@@ -6,7 +6,7 @@ return to win!!!
 nc 35.180.44.229 1235
 ```
 
-On comprends à la description qu'il va s'agir d'un ret2win, vérifions si des sécurités sont activées :
+On comprends à la description qu'il va s'agir d'un ret2win. [L'exécutable](./task_new) est fournit vérifions si des sécurités sont activées :
 
 ```console
 $ checksec --file=task_new
@@ -14,7 +14,7 @@ RELRO           STACK CANARY      NX            PIE             RPATH      RUNPA
 Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   77 Symbols	  No	0		3	task_new
 ```
 
-Visiblement pas de PIE ni de canary. [L'exécutable](./task_new) est fournit, essayons le :
+Visiblement pas de PIE ni de canary, essayons le :
 
 ```console
 $ ./task_new 
