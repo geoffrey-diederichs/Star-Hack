@@ -133,7 +133,7 @@ gef➤  r <<< $(python3 -c 'print("A"*76+"B"*4)')
 [#0] Id 1, Name: "task_new", stopped 0x42424242 in ?? (), reason: SIGSEGV
 ```
 
-Le programme crash car il n'arrive pas à accèder à l'adresse que nous avons injecter : il faudra un offset de 76 bytes.
+Le programme crash car il n'arrive pas à accèder à l'adresse que nous avons injecté : il faudra un offset de 76 bytes.
 
 ## Exploit
 
