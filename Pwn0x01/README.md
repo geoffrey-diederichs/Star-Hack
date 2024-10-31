@@ -9,12 +9,17 @@ nc 35.180.44.229 1235
 On comprends à la description qu'il va s'agir d'un ret2win. [L'exécutable](./task_new) est fournit vérifions si des sécurités sont activées :
 
 ```console
-$ checksec --file=task_new
-RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH	Symbols		FORTIFY	Fortified	Fortifiable	FILE
-Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   77 Symbols	  No	0		3	task_new
+$ checksec --file=task_new 
+[*] '/home/geoffrey/Documents/Campus/Star-Hack/Pwn0x01/task_new'
+    Arch:       i386-32-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX enabled
+    PIE:        No PIE (0x8048000)
+    Stripped:   No
 ```
 
-Visiblement pas de PIE ni de canary, essayons le :
+Visiblement pas de PIE ni de canary, et s'il s'agit bien d'un ret2win NX nous importe peu. Essayons de le lancer :
 
 ```console
 $ ./task_new 
