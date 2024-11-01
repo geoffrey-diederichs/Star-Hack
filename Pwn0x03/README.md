@@ -57,7 +57,7 @@ U----------------------------
 type your secret : BBBB
 ```
 
-Le programme nous demande de multiples entrées, essayons de voir si l'une d'entre elles sont vulnérables.
+Le programme nous demande de multiples entrées, essayons de voir si l'une d'entre elle est vulnérable.
 
 ## Analyse statique
 
