@@ -38,7 +38,7 @@ MAIL SENDER v0.1.5
 mail is sent! quitting now.
 ```
 
-Le programme nous demande de multiples entrées, essayons de voir si l'une d'entre elles sont vulnérables.
+Le programme nous demande de multiples entrées, essayons de voir si l'une d'entre elles est vulnérable.
 
 ## Analyse statique
 
