@@ -273,7 +273,7 @@ $ ROPgadget --binary libc.so.6 | grep "pop rdi ; ret"
 0x0000000000023b6a : pop rdi ; ret
 ```
 
-Il ne nous reste plus qu'à tout mettre en commun dans [ce script](./exploit.py), qui nous donne :
+Il ne nous reste plus qu'à tout mettre en commun dans [ce script](./exploit.py), ce qui nous donne :
 
 ```console
 $ python3 exploit.py 
