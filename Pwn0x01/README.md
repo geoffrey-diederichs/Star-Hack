@@ -6,7 +6,7 @@ return to win!!!
 nc 35.180.44.229 1235
 ```
 
-On comprends à la description qu'il va s'agir d'un ret2win. [L'exécutable](./task_new) est fournit vérifions si des sécurités sont activées :
+On comprends à la description qu'il va s'agir d'un [ret2win](https://book.hacktricks.xyz/binary-exploitation/stack-overflow/ret2win). [L'exécutable](./task_new) est fournit vérifions si des sécurités sont activées :
 
 ```console
 $ checksec --file=task_new 
@@ -74,7 +74,7 @@ void callMe(int param_1)
 }
 ```
 
-La fonction `main` ne nous intéresse pas trop elle ne fait qu'appeler `portalGun`, qui elle par contre est vulnérable à un buffer overflow :
+La fonction `main` ne nous intéresse pas trop elle ne fait qu'appeler `portalGun`, qui elle par contre est vulnérable à un buffer overflow (car pas de limite sur la taille de l'input de l'utilisateur) :
 
 ```C
   char local_4c [68];
