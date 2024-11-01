@@ -144,7 +144,7 @@ Le programme crash car il n'arrive pas à accèder à l'adresse que nous avons i
 
 PIE est désactivé nous pouvons donc utiliser cette adresse de `portalGun` :
 
-```console
+```gdb
 gef➤  info func callMe
 All functions matching regular expression "callMe":
 
