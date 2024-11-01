@@ -219,7 +219,7 @@ Et calculons cet offset avec Python :
 147587
 ```
 
-Nous avons maintenant toutes les informations nécessaires, passons maintenant à l'exploit.
+Nous avons maintenant toutes les informations nécessaires, passons à l'exploit.
 
 ## Exploit
 
