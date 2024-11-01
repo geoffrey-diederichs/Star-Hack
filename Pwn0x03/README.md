@@ -137,7 +137,7 @@ type your secret :
 
 `0x100000000` étant la 30ième valeur sur la stack au moment où elle est leak.
 
-Maintenant que nous sommes en capacité de leak la stack, il faut trouver les bonnes valeurs pour faire notre exploit. Le plus simple ici semble être de faire un [ret2lib](https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation/return-to-libc-ret2libc). Pour cela, nous devons trouver une addresse de la `libc` et le [canary](https://ir0nstone.gitbook.io/notes/binexp/stack/canaries). En testant les leaks possibles sous GDB, on finit par trouver :
+Maintenant que nous sommes en capacité de leak la stack, il faut trouver les bonnes valeurs pour faire notre exploit. Le plus simple ici semble être de faire un [ret2lib](https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation/return-to-libc-ret2libc). Pour cela, nous devons trouver une addresse de la `libc` ainsi que le [canary](https://ir0nstone.gitbook.io/notes/binexp/stack/canaries). En testant les leaks possibles sous GDB, on finit par trouver :
 
 ```gdb
 gef➤  r
